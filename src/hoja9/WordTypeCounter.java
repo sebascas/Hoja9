@@ -1,4 +1,4 @@
-package hoja9;
+
 
 /*-----------------------------------------------------------------------
 Carlos Javier Lima Cordon			14373
@@ -21,10 +21,10 @@ class WordTypeCounter {
 		{
 			// Declaración e inicialización de variables.
 			// el primer parametro indica el nombre del archivo con las definiciones de las palabras
-			File wordFile = new File("words.txt");
+			File wordFile = new File("C:\\Users\\Marlon\\Downloads\\Hoja9-master\\words.txt");
 			
 			// el segundo parametro indica el nombre del archivo que tiene el texto a analizar
-			File textFile = new File("text.txt");
+			File textFile = new File("C:\\Users\\Marlon\\Downloads\\Hoja9-master\\text.txt");
 			
 			// el tercer parametro sirve para seleccionar la implementacion que se usara para
 			// guardar el conjunto de palabras. Use el valor 1 para indicar que se empleara
@@ -35,9 +35,9 @@ class WordTypeCounter {
 			//  4 Hash Table
 			//  5 TreeMap (de java collection framework)
 			int implementacion = 0;
-			System.out.print("Ingrese el numero de la implementacion\n"
-                + "1.SimpleSet\n2.RedBlackTree\n3.SplayTree\n4.HashTable\n5.TreeMap");
-                        
+			System.out.print("Ingrese el numero de la implementacion\n\n"
+                + "1.SimpleSet\n2.RedBlackTree\n3.SplayTree\n4.HashTable\n5.TreeMap\n");
+                        System.out.print("\nOpcion:"); 
 			implementacion=teclado.nextInt();
 			
 			BufferedReader wordreader;
@@ -53,7 +53,7 @@ class WordTypeCounter {
 			long endtime;
 			
 			// Verificar que los dos parámetros que se pasaron sean archivos que existen
-			if(wordFile.isFile() && textFile.isFile()) {
+			if(wordFile.isFile() && textFile.isFile() && implementacion>=1 && implementacion<=5) {
 				// Leer archivos
 				try
 				{
@@ -140,9 +140,11 @@ class WordTypeCounter {
 				System.out.println(gerunds + " gerundios");
 				
 			}
-			else
-			{
-				System.out.println("No encuentro los archivos :'( ");
+			else if (implementacion<1 || implementacion>5){
+				System.out.println("\nOpcion ingresada invalida.");
+			}
+			else {
+				System.out.println("\nNo encuentro los archivos :'( ");
 			}
 		}
 		else
