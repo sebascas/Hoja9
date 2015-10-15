@@ -21,7 +21,7 @@ public class TestWordSet {
         WordSet words =  WordSetFactory.generateSet(2);
         words.add(new Word("palabra","v"));
     }
-    
+     
     @Test
     public void addSplay(){
         WordSet words =  WordSetFactory.generateSet(3);
